@@ -117,7 +117,7 @@ systemctl enable nginx
   EOF
 
   tags = {
-    "Name" : "Terraform Apache"
+    "Name" : "Terraform NGINX"
   }
 }
 
