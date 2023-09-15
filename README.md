@@ -16,6 +16,6 @@ The following AWS resources are created via the Terraform script:
 7. Security Group
 8. EC2 Instance with Apache
 
-The EC2 instance IP is output at the end of the Terraform script so that you can verify whether NGINX was installed and configured correctly.
+The EC2 instance public IP is output at the end of the Terraform script so that you can verify whether Apache was installed and configured correctly.
 
 This is a very basic example of IAC via a DevOps workflow, and will be improved as I have time.
