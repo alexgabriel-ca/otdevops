@@ -14,7 +14,7 @@ The following AWS resources are created via the Terraform script:
 5. Route Table
 6. Route Table Association
 7. Security Group
-8. EC2 Instance with NGINX
+8. EC2 Instance with Apache
 
 The EC2 instance IP is output at the end of the Terraform script so that you can verify whether NGINX was installed and configured correctly.
 
