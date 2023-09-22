@@ -4,7 +4,7 @@ resource "aws_subnet" "some_public_subnet" {
   availability_zone = "ca-central-1a"
 
   tags = {
-    Name = "Terraform Public Subnet"
+    Name = "DevOps Public Subnet"
   }
 }
 
@@ -14,6 +14,6 @@ resource "aws_subnet" "some_private_subnet" {
   availability_zone = "ca-central-1a"
 
   tags = {
-    Name = "Terraform Private Subnet"
+    Name = "DevOps Private Subnet"
   }
 }

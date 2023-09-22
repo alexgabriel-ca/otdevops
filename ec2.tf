@@ -17,6 +17,6 @@ systemctl enable httpd
   EOF
 
   tags = {
-    "Name" : "Terraform Apache"
+    "Name" : "DevOps Apache"
   }
 }

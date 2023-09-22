@@ -1,0 +1,35 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_instance.web_instance (expand)" [label = "aws_instance.web_instance", shape = "box"]
+		"[root] aws_internet_gateway.some_ig (expand)" [label = "aws_internet_gateway.some_ig", shape = "box"]
+		"[root] aws_route_table.public_rt (expand)" [label = "aws_route_table.public_rt", shape = "box"]
+		"[root] aws_route_table_association.public_1_rt_a (expand)" [label = "aws_route_table_association.public_1_rt_a", shape = "box"]
+		"[root] aws_security_group.web_sg (expand)" [label = "aws_security_group.web_sg", shape = "box"]
+		"[root] aws_subnet.some_private_subnet (expand)" [label = "aws_subnet.some_private_subnet", shape = "box"]
+		"[root] aws_subnet.some_public_subnet (expand)" [label = "aws_subnet.some_public_subnet", shape = "box"]
+		"[root] aws_vpc.some_custom_vpc (expand)" [label = "aws_vpc.some_custom_vpc", shape = "box"]
+		"[root] data.aws_ami.app_ami (expand)" [label = "data.aws_ami.app_ami", shape = "box"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] aws_instance.web_instance (expand)" -> "[root] aws_security_group.web_sg (expand)"
+		"[root] aws_instance.web_instance (expand)" -> "[root] aws_subnet.some_public_subnet (expand)"
+		"[root] aws_instance.web_instance (expand)" -> "[root] data.aws_ami.app_ami (expand)"
+		"[root] aws_internet_gateway.some_ig (expand)" -> "[root] aws_vpc.some_custom_vpc (expand)"
+		"[root] aws_route_table.public_rt (expand)" -> "[root] aws_internet_gateway.some_ig (expand)"
+		"[root] aws_route_table_association.public_1_rt_a (expand)" -> "[root] aws_route_table.public_rt (expand)"
+		"[root] aws_route_table_association.public_1_rt_a (expand)" -> "[root] aws_subnet.some_public_subnet (expand)"
+		"[root] aws_security_group.web_sg (expand)" -> "[root] aws_vpc.some_custom_vpc (expand)"
+		"[root] aws_subnet.some_private_subnet (expand)" -> "[root] aws_vpc.some_custom_vpc (expand)"
+		"[root] aws_subnet.some_public_subnet (expand)" -> "[root] aws_vpc.some_custom_vpc (expand)"
+		"[root] aws_vpc.some_custom_vpc (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] data.aws_ami.app_ami (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] output.ec2_global_ips (expand)" -> "[root] aws_instance.web_instance (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_instance.web_instance (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.public_1_rt_a (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_subnet.some_private_subnet (expand)"
+		"[root] root" -> "[root] output.ec2_global_ips (expand)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+	}
+}
+

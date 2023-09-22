@@ -13,7 +13,6 @@ provider "aws" {
   region = "ca-central-1"
 }
 
-
 data "aws_ami" "app_ami" {
   most_recent = true
   owners      = ["amazon"]

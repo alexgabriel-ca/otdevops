@@ -1,5 +1,5 @@
 resource "aws_security_group" "web_sg" {
-  name   = "Terraform HTTP and SSH"
+  name   = "DevOps HTTP and SSH"
   vpc_id = aws_vpc.some_custom_vpc.id
 
   ingress {
