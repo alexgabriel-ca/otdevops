@@ -3,6 +3,7 @@ terraform {
     aws = {
       source = "hashicorp/aws"
       #version = "~> 4.16"
+      shared_credentials_files  = ["%USERPROFILE%/.aws/credentials"]
     }
   }
 
