@@ -3,7 +3,6 @@ terraform {
     aws = {
       source = "hashicorp/aws"
       #version = "~> 4.16"
-      shared_credentials_files  = ["%USERPROFILE%/.aws/credentials"]
     }
   }
 
@@ -12,6 +11,7 @@ terraform {
 
 provider "aws" {
   region = "ca-central-1"
+  shared_credentials_files  = ["%USERPROFILE%/.aws/credentials"]
 }
 
 data "aws_ami" "app_ami" {
