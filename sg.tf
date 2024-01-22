@@ -1,5 +1,4 @@
 resource "aws_security_group" "web_sg" {
-  name   = "DevOps HTTP and SSH"
   vpc_id = aws_vpc.some_custom_vpc.id
 
   ingress {
@@ -21,5 +20,8 @@ resource "aws_security_group" "web_sg" {
     to_port     = 0
     protocol    = -1
     cidr_blocks = ["0.0.0.0/0"]
+  }
+  tags = {
+    Name = "DevOps HTTP and SSH"
   }
 }

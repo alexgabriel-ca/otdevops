@@ -17,6 +17,20 @@ systemctl enable httpd
   EOF
 
   tags = {
-    "Name" : "DevOps Apache"
+    Name = "DevOps Apache"
   }
+
+}
+
+resource "aws_instance" "private_instance" {
+  ami           = data.aws_ami.app_ami.id
+  instance_type = "t2.micro"
+
+  subnet_id                   = aws_subnet.some_private_subnet.id
+  associate_public_ip_address = false
+
+  tags = {
+    Name = "DevOps Private Instance"
+  }
+
 }
