@@ -30,7 +30,7 @@ resource "aws_instance" "private_instance" {
   associate_public_ip_address = false
 
   tags = {
-    Name = "DevOps Private Instance"
+    Name = "OpenText Private Instance"
   }
 
 }
