@@ -4,7 +4,8 @@ resource "aws_subnet" "some_public_subnet" {
   availability_zone = "ca-central-1a"
 
   tags = {
-    Name = "OpenText DevOps Public Subnet"
+    Name        = "OpenText DevOps Public Subnet"
+    Environment = var.environment
   }
 }
 
@@ -14,6 +15,7 @@ resource "aws_subnet" "some_private_subnet" {
   availability_zone = "ca-central-1a"
 
   tags = {
-    Name = "OpenText DevOps Private Subnet"
+    Name        = "OpenText DevOps Private Subnet"
+    Environment = var.environment
   }
 }

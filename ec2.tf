@@ -17,7 +17,8 @@ systemctl enable httpd
   EOF
 
   tags = {
-    Name = "OpenText DevOps Apache-${count.index + 1}"
+    Name        = "OpenText DevOps Apache-${count.index + 1}"
+    Environment = var.environment
   }
 
 }
@@ -31,6 +32,7 @@ resource "aws_instance" "private_instance" {
   associate_public_ip_address = false
 
   tags = {
-    Name = "OpenText DevOps Private Instance"
+    Name        = "OpenText DevOps Private Instance"
+    Environment = var.environment
   }
 }

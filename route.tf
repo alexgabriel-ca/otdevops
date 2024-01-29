@@ -12,7 +12,8 @@ resource "aws_route_table" "public_rt" {
   }
 
   tags = {
-    Name = "OpenText DevOps Route Table"
+    Name        = "OpenText DevOps Route Table"
+    Environment = var.environment
   }
 }
 
