@@ -1,5 +1,5 @@
-resource "aws_security_group" "web_sg" {
-  vpc_id = aws_vpc.some_custom_vpc.id
+resource "aws_security_group" "devops_public_sg" {
+  vpc_id = aws_vpc.devops_vpc.id
 
   ingress {
     from_port   = 80
@@ -27,8 +27,8 @@ resource "aws_security_group" "web_sg" {
   }
 }
 
-resource "aws_security_group" "private_sg" {
-  vpc_id = aws_vpc.some_custom_vpc.id
+resource "aws_security_group" "devops_private_sg" {
+  vpc_id = aws_vpc.devops_vpc.id
 
   # ingress {
   #   from_port   = 80

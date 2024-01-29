@@ -1,9 +1,9 @@
-resource "aws_instance" "web_instance" {
+resource "aws_instance" "devops_public_instance" {
   ami                         = data.aws_ami.app_ami.id
   instance_type               = "t2.micro"
-  count                       = 2
-  subnet_id                   = aws_subnet.some_public_subnet.id
-  vpc_security_group_ids      = [aws_security_group.web_sg.id]
+  count                       = var.environment == "Production" ? 2 : 1
+  subnet_id                   = aws_subnet.devops_public_subnet.id
+  vpc_security_group_ids      = [aws_security_group.devops_public_sg.id]
   associate_public_ip_address = true
 
   user_data = <<-EOF
@@ -23,12 +23,12 @@ systemctl enable httpd
 
 }
 
-resource "aws_instance" "private_instance" {
+resource "aws_instance" "devops_private_instance" {
   ami           = data.aws_ami.app_ami.id
   instance_type = "t2.micro"
 
-  subnet_id                   = aws_subnet.some_private_subnet.id
-  vpc_security_group_ids      = [aws_security_group.private_sg.id]
+  subnet_id                   = aws_subnet.devops_private_subnet.id
+  vpc_security_group_ids      = [aws_security_group.devops_private_sg.id]
   associate_public_ip_address = false
 
   tags = {

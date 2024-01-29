@@ -1,4 +1,4 @@
-resource "aws_vpc" "some_custom_vpc" {
+resource "aws_vpc" "devops_vpc" {
   cidr_block = "10.0.0.0/16"
 
   tags = {

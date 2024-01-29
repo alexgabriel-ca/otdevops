@@ -1,5 +1,5 @@
-resource "aws_network_acl" "public_nacl" {
-  vpc_id = aws_vpc.some_custom_vpc.id
+resource "aws_network_acl" "devops_nacl" {
+  vpc_id = aws_vpc.devops_vpc.id
 
   egress {
     protocol   = "tcp"
