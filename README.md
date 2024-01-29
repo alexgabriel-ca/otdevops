@@ -19,4 +19,4 @@ The following AWS resources are created via the Terraform script:
 
 The EC2 instance public IP is output at the end of the Terraform script so that you can verify whether Apache was installed and configured correctly.
 
-This is a very basic example of IAC via a DevOps workflow, and will be improved as I have time.
+This project is a basic example of leveraging the DevOps methodology to deploy infrastructure as code (IaC).
