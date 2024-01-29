@@ -12,7 +12,7 @@ resource "aws_route_table" "public_rt" {
   }
 
   tags = {
-    Name = "DevOps Route Table"
+    Name = "OpenText DevOps Route Table"
   }
 }
 

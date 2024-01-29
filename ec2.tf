@@ -1,7 +1,7 @@
 resource "aws_instance" "web_instance" {
-  ami           = data.aws_ami.app_ami.id
-  instance_type = "t2.micro"
-
+  ami                         = data.aws_ami.app_ami.id
+  instance_type               = "t2.micro"
+  count                       = 2
   subnet_id                   = aws_subnet.some_public_subnet.id
   vpc_security_group_ids      = [aws_security_group.web_sg.id]
   associate_public_ip_address = true
@@ -17,7 +17,7 @@ systemctl enable httpd
   EOF
 
   tags = {
-    Name = "DevOps Apache"
+    Name = "OpenText DevOps Apache-${count.index + 1}"
   }
 
 }
@@ -31,7 +31,6 @@ resource "aws_instance" "private_instance" {
   associate_public_ip_address = false
 
   tags = {
-    Name = "OpenText Private Instance"
+    Name = "OpenText DevOps Private Instance"
   }
-
 }

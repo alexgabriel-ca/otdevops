@@ -22,7 +22,7 @@ resource "aws_security_group" "web_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
-    Name = "DevOps HTTP and SSH"
+    Name = "OpenText DevOps HTTP and SSH"
   }
 }
 
@@ -50,6 +50,6 @@ resource "aws_security_group" "private_sg" {
   #   cidr_blocks = ["0.0.0.0/0"]
   # }
   tags = {
-    Name = "DevOps Private SG"
+    Name = "OpenText DevOps Private SG"
   }
 }
