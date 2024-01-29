@@ -13,8 +13,9 @@ The following AWS resources are created via the Terraform script:
 4. Internet Gateway
 5. Route Table
 6. Route Table Association
-7. Security Group
-8. EC2 Instance with Apache
+7. Network ACL
+8. Security Group
+9. EC2 Instance with Apache
 
 The EC2 instance public IP is output at the end of the Terraform script so that you can verify whether Apache was installed and configured correctly.
 
