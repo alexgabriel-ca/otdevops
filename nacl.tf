@@ -20,7 +20,7 @@ resource "aws_network_acl" "devops_nacl" {
   }
 
   tags = {
-    Name        = "OpenText Central NACL"
+    Name        = "OpenText DevOps NACL"
     Environment = var.environment
   }
 }
