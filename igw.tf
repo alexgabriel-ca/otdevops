@@ -5,4 +5,7 @@ resource "aws_internet_gateway" "devops_ig" {
     Name        = "OpenText DevOps Internet Gateway"
     Environment = var.environment
   }
+  depends_on = [
+    aws_subnet.devops_public_subnet
+  ]
 }

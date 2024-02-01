@@ -23,4 +23,7 @@ resource "aws_network_acl" "devops_nacl" {
     Name        = "OpenText DevOps NACL"
     Environment = var.environment
   }
+  depends_on = [
+    aws_route_table.devops_rt
+  ]
 }

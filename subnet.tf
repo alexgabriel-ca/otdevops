@@ -7,6 +7,9 @@ resource "aws_subnet" "devops_public_subnet" {
     Name        = "OpenText DevOps Public Subnet"
     Environment = var.environment
   }
+  depends_on = [
+    aws_vpc.devops_vpc
+  ]
 }
 
 resource "aws_subnet" "devops_private_subnet" {
@@ -18,4 +21,7 @@ resource "aws_subnet" "devops_private_subnet" {
     Name        = "OpenText DevOps Private Subnet"
     Environment = var.environment
   }
+  depends_on = [
+    aws_vpc.devops_vpc
+  ]
 }

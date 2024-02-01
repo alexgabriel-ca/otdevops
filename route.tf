@@ -15,9 +15,15 @@ resource "aws_route_table" "devops_rt" {
     Name        = "OpenText DevOps Route Table"
     Environment = var.environment
   }
+  depends_on = [
+    aws_internet_gateway.devops_ig
+  ]
 }
 
 resource "aws_route_table_association" "public_1_rt_a" {
   subnet_id      = aws_subnet.devops_public_subnet.id
   route_table_id = aws_route_table.devops_rt.id
+  depends_on = [
+    aws_route_table.devops_rt
+  ]
 }

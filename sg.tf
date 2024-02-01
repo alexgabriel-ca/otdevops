@@ -25,6 +25,9 @@ resource "aws_security_group" "devops_public_sg" {
     Name        = "OpenText DevOps HTTP and SSH"
     Environment = var.environment
   }
+  depends_on = [
+    aws_network_acl.devops_nacl
+  ]
 }
 
 resource "aws_security_group" "devops_private_sg" {
@@ -54,4 +57,7 @@ resource "aws_security_group" "devops_private_sg" {
     Name        = "OpenText DevOps Private SG"
     Environment = var.environment
   }
+  depends_on = [
+    aws_network_acl.devops_nacl
+  ]
 }

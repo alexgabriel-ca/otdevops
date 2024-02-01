@@ -20,7 +20,9 @@ systemctl enable httpd
     Name        = "OpenText DevOps Apache-${count.index + 1}"
     Environment = var.environment
   }
-
+  depends_on = [
+    aws_security_group.devops_public_sg
+  ]
 }
 
 resource "aws_instance" "devops_private_instance" {
@@ -35,4 +37,7 @@ resource "aws_instance" "devops_private_instance" {
     Name        = "OpenText DevOps Private Instance"
     Environment = var.environment
   }
+  depends_on = [
+    aws_security_group.devops_private_sg
+  ]
 }
