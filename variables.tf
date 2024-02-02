@@ -1,6 +1,6 @@
 variable "environment" {
   type    = string
-  default = "Production"
+  default = "Dev/Test"
 }
 
 variable "zone" {
